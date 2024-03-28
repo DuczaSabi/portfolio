@@ -2,10 +2,10 @@
 .greet-section {
   position: fixed;
   top: 0;
-  padding: 15rem 10rem 0 10rem;
+  padding: 20rem 10rem 0 10rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   z-index: -9999;
   transform-origin: top center;
 }
@@ -49,16 +49,30 @@
 
 /* Greet image */
 .greet-image-container {
-  width: 25%;
+  width: 500px;
+  text-align: center;
+}
+
+.greet-image-container img,
+.greet-image-container div {
+  position: absolute;
+  margin: auto;
+  width: 450px;
+}
+
+.greet-image-container div {
+  border-radius: 100%;
+  border: 20px solid var(--secondary-color);
+  height: 300px;
+  transition: ease-in-out 0.3s;
 }
 
 .greet-image-container img {
-  clip-path: ellipse(70% 50% at 50% 50%);
-  transform: rotate(5deg);
+  clip-path: ellipse(61% 50% at 50% 50%);
+  transform: rotate(6deg);
   user-select: none;
-}
-
-.greet-image {
-  width: 25rem;
   height: auto;
+  margin-top: -166px;
+  margin-left: -236px;
+  transition: ease-in-out 0.2s;
 }

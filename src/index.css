@@ -1,12 +1,12 @@
 body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--primary-color);
+  background-image: linear-gradient(
+    to bottom right,
+    var(--background-color),
+    color-mix(in srgb, var(--background-color) 30%, var(--secondary-color) 70%)
+  );
   transition: ease-in-out 0.2s;
-}
-
-.App {
-  height: 100vh;
 }
 
 .hide {
@@ -17,11 +17,15 @@ body {
   opacity: 0;
 }
 
+.darken {
+  filter: brightness(0.8);
+}
+
 :root {
   --light: #ececec;
   --dark: #001429;
 
-  --primary-color: #ececec;
+  --primary-color: #005fc6;
   --secondary-color: #007bff;
 
   --background-color: var(--white);

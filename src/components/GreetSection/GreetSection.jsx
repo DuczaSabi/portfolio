@@ -19,8 +19,6 @@ window.addEventListener('scroll', function() {
   }
 });
 
-
-
 function GreetSection() {
     return (
         <div className="greet-section">
@@ -29,7 +27,8 @@ function GreetSection() {
                <p>Scroll down to learn more about me! &darr;</p>
             </div>
             <div className='greet-image-container'>
-                <img src={pictureOfMe} className='greet-image' alt='' draggable={false}/>
+                <div></div>
+                <img src={pictureOfMe} alt='' className='greet-image' draggable={false}/>
             </div>
         </div>
     )

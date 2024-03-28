@@ -4,15 +4,20 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  background-color: var(--secondary-color);
+  background-image: linear-gradient(
+    to top right,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   transition: ease-in-out 0.2s;
   width: 90%;
   height: 5rem;
+  position: sticky;
+  top: 0;
   margin: auto;
   border-radius: 9999px;
   z-index: 9999;
-  box-shadow: 0px 5px 8px
-    color-mix(in srgb, var(--secondary-color) 40%, transparent 60%);
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.4);
 }
 
 .header-closed {
@@ -30,7 +35,7 @@
   font-family: "Dancing Script", cursive;
   font-size: 3.5rem;
   font-weight: bold;
-  position: absolute;
+  position: fixed;
   margin-left: auto;
   margin-right: auto;
   left: 0;

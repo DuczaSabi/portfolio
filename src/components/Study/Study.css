@@ -1,0 +1,70 @@
+.study {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 4rem;
+  color: var(--font-color);
+  transition: ease-in-out 0.2s;
+  width: calc(50% - 8rem);
+}
+
+.study:nth-child(even) {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.study:nth-child(2) {
+  background-color: transparent;
+}
+
+.study:nth-child(3) {
+  background-color: transparent;
+}
+
+.study-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 250px;
+  background-color: var(--light);
+  border-radius: 50px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.study-image img {
+  width: 90%;
+}
+
+.study-info {
+  width: 70%;
+}
+
+.study-info h2 {
+  margin: 20px;
+  font-size: 2rem;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.study-info h3 {
+  margin: 0;
+  margin-left: 40px;
+  margin-right: 40px;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.study-info p {
+  margin: 30px;
+  font-size: 1.2rem;
+}
+
+/* @media screen {
+  .study:nth-child(2) {
+    background-color: var(--primary-color);
+  }
+
+  .study:nth-child(3) {
+    background-color: var(--secondary-color);
+  }
+} */
