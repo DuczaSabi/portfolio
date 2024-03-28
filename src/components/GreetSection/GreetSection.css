@@ -1,0 +1,64 @@
+/* Greet section */
+.greet-section {
+  position: fixed;
+  top: 0;
+  padding: 15rem 10rem 0 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: -9999;
+  transform-origin: top center;
+}
+
+/* Greet text */
+.greet-text {
+  width: 45%;
+}
+
+.greet-text h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--font-color);
+  transition: ease-in-out 0.5s;
+}
+
+.greet-text h1 span {
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 3.5rem;
+  transition: ease-in-out 0.2s;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(10px);
+  }
+}
+
+.greet-text p {
+  text-align: right;
+  font-size: 1.4rem;
+  color: var(--font-color);
+  transition: ease-in-out 0.5s;
+  animation: bounce 2s infinite;
+}
+
+/* Greet image */
+.greet-image-container {
+  width: 25%;
+}
+
+.greet-image-container img {
+  clip-path: ellipse(70% 50% at 50% 50%);
+  transform: rotate(5deg);
+  user-select: none;
+}
+
+.greet-image {
+  width: 25rem;
+  height: auto;
+}

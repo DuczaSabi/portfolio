@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import GreetSection from "./components/GreetSection/GreetSection";
+import Header from "./components/Header/Header";
+import React, { useState, useEffect } from "react";
+import StudiesSection from "./components/StudiesSection/StudiesSection";
 
 function App() {
+  const [isDark, setIsDark] = useState(false);
+  const [language, setLanguage] = useState("en");
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (isDark) {
+      root.style.setProperty("--primary-color", "var(--dark)");
+      root.style.setProperty("--secondary-color", "#00448c");
+      root.style.setProperty("--background-color", "var(--dark)");
+      root.style.setProperty("--font-color", "var(--light)");
+    } else {
+      root.style.setProperty("--primary-color", "var(--light)");
+      root.style.setProperty("--secondary-color", "#007bff");
+      root.style.setProperty("--background-color", "var(--light)");
+      root.style.setProperty("--font-color", "var(--dark)");
+    }
+  }, [isDark]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header
+        language={language}
+        setLanguage={setLanguage}
+        isDark={isDark}
+        setIsDark={setIsDark}
+      />
+      <GreetSection />
+      <StudiesSection />
     </div>
   );
 }
