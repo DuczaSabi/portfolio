@@ -1,4 +1,5 @@
 .studies-section {
+  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -11,8 +12,8 @@
   );
   background-color: var(--secondary-color);
   width: 95%;
-  z-index: 9999;
-  border-radius: 100px;
+  z-index: 2;
+  border-radius: 50px;
   transition: ease-in-out 0.2s;
   margin: auto;
   margin-top: 60rem;
@@ -34,4 +35,46 @@
   fill: var(--font-color);
   width: 5rem;
   height: 5rem;
+}
+
+@media screen and (max-width: 1300px) {
+  .studies-section {
+    background-image: none;
+    padding-top: 180px;
+  }
+
+  .studies-title {
+    top: 30px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .studies-section {
+    padding-top: 110px;
+  }
+
+  .studies-title {
+    top: 0px;
+    font-size: 2rem;
+  }
+
+  .studies-title svg {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .studies-section {
+    padding-top: 80px;
+  }
+  .studies-title {
+    top: 0px;
+    font-size: 1.5rem;
+  }
+
+  .studies-title svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 }

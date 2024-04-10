@@ -9,6 +9,12 @@ body {
   transition: ease-in-out 0.2s;
 }
 
+.App {
+  z-index: -9999;
+  max-width: 2200px;
+  margin: auto;
+}
+
 .hide {
   display: none;
 }

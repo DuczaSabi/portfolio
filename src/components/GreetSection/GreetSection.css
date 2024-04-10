@@ -2,17 +2,21 @@
 .greet-section {
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   padding: 20rem 10rem 0 10rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
   z-index: -9999;
   transform-origin: top center;
+  margin: auto;
 }
 
 /* Greet text */
 .greet-text {
   width: 45%;
+  margin: auto;
 }
 
 .greet-text h1 {
@@ -26,7 +30,7 @@
   color: var(--secondary-color);
   font-weight: bold;
   font-size: 3.5rem;
-  transition: ease-in-out 0.2s;
+  transition: ease-in-out 0.3s;
 }
 
 @keyframes bounce {
@@ -51,6 +55,10 @@
 .greet-image-container {
   width: 500px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
 }
 
 .greet-image-container img,
@@ -64,15 +72,115 @@
   border-radius: 100%;
   border: 20px solid var(--secondary-color);
   height: 300px;
-  transition: ease-in-out 0.3s;
 }
 
 .greet-image-container img {
-  clip-path: ellipse(61% 50% at 50% 50%);
+  clip-path: ellipse(60% 50% at 50% 50%);
   transform: rotate(6deg);
   user-select: none;
   height: auto;
-  margin-top: -166px;
-  margin-left: -236px;
-  transition: ease-in-out 0.2s;
+  margin-left: -10px;
+  margin-top: -181px;
+}
+
+@media screen and (max-width: 1320px) {
+  .greet-section {
+    flex-direction: column;
+    padding: 10rem 0;
+  }
+
+  .greet-text {
+    width: 85%;
+  }
+
+  .greet-text h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .greet-text h1 span {
+    font-size: 2.9rem;
+  }
+
+  .greet-image-container img,
+  .greet-image-container div {
+    position: absolute;
+    margin: auto;
+    width: 300px;
+  }
+
+  .greet-image-container div {
+    height: 200px;
+    margin-top: 105px;
+  }
+
+  .greet-image-container img {
+    margin-left: -7px;
+    margin-top: -15px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .greet-text {
+    width: 95%;
+  }
+
+  .greet-text h1 {
+    font-size: 2rem;
+  }
+
+  .greet-text h1 span {
+    font-size: 2.4rem;
+  }
+
+  .greet-text p {
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  .greet-image-container img,
+  .greet-image-container div {
+    width: 210px;
+  }
+
+  .greet-image-container div {
+    border: 15px solid var(--secondary-color);
+    height: 140px;
+    margin-top: -35px;
+  }
+
+  .greet-image-container img {
+    margin-left: -3px;
+    margin-top: -121px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .greet-text h1 {
+    font-size: 1.4rem;
+  }
+
+  .greet-text h1 span {
+    font-size: 1.7rem;
+  }
+
+  .greet-text p {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  .greet-image-container img,
+  .greet-image-container div {
+    width: 150px;
+  }
+
+  .greet-image-container div {
+    border: 10px solid var(--secondary-color);
+    height: 100px;
+    margin-top: -120px;
+  }
+
+  .greet-image-container img {
+    margin-top: -184px;
+  }
 }

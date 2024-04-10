@@ -27,28 +27,33 @@ skillList.forEach(skill => {
     imagePaths[skill.name] = require(`../../Images/Skills/${skill.name}.png`);
 });
 
+let startFadePosition = 0;
+
 window.addEventListener('scroll', function() {
-  var scrollTop = window.scrollY;
-  var skillsSection = document.querySelector('.skills-section');
-  var windowHeight = window.innerHeight;
-  var startFadePosition = windowHeight * 1.6;
+  let scrollTop = window.scrollY;
+  let skillsSection = document.querySelector('.skills-section');
+  let windowHeight = window.innerHeight;
+  startFadePosition = windowHeight * 0.9;
 
   if (scrollTop > startFadePosition) {
-    var opacity = ((scrollTop - startFadePosition) / (windowHeight * 0.4));
+    skillsSection.style.display = "flex";
+    let opacity = ((scrollTop - startFadePosition) / (windowHeight * 0.4));
     opacity = Math.min(1, Math.max(0, opacity));
     skillsSection.style.opacity = opacity.toFixed(2);
-    
-var scaleFactor = ((scrollTop - startFadePosition) / (windowHeight * 0.8)) + 0.7;
-scaleFactor = Math.min(1, Math.max(0.7, scaleFactor));
-skillsSection.style.transform = 'scale(' + scaleFactor.toFixed(2) + ')';
 
   } else {
     skillsSection.style.opacity = 0;
+    skillsSection.style.display = "none";
   }
 });
 
+window.addEventListener('resize', function() {
+  let windowHeight = window.innerHeight;
+  startFadePosition = windowHeight * 1.6;
+});
 
-function SkillsSection() {
+
+function SkillsSection({language}) {
     const [hoveredSkill, setHoveredSkill] = useState(null);
 
     const handleSkillHover = (text) => {
@@ -61,7 +66,10 @@ function SkillsSection() {
 
     return (
         <div className="skills-section">
-            <h2>{hoveredSkill ? hoveredSkill : "My Skills"}</h2>
+        {language === "en" ? 
+            <h2>{hoveredSkill ? hoveredSkill : "My Skills"}</h2> :
+            <h2>{hoveredSkill ? hoveredSkill : "Képességeim"}</h2> }
+
             {skillList.map(skill => (
                 <Skill 
                     key={skill.name} 

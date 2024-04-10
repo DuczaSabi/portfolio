@@ -1,10 +1,12 @@
 .skill {
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+  height: auto;
   transition: ease-in-out 0.2s;
+  user-select: none;
+  margin: 10px;
 }
 
 .skill img {
@@ -16,67 +18,78 @@
   transform: scale(1.2);
 }
 
-.skill:nth-child(2) {
-  left: 13%;
-  top: 13%;
-}
-.skill:nth-child(3) {
-  left: 23%;
-  top: 38%;
-}
-.skill:nth-child(4) {
-  left: 30%;
-  top: 80%;
-}
-.skill:nth-child(5) {
-  left: 10%;
-  top: 73%;
-}
-.skill:nth-child(6) {
-  left: 68%;
-  top: 77%;
-}
-.skill:nth-child(7) {
-  left: 20%;
-  top: 60%;
-}
-.skill:nth-child(8) {
-  left: 5%;
-  top: 45%;
-}
-.skill:nth-child(9) {
-  left: 72%;
-  top: 36%;
-}
-.skill:nth-child(10) {
-  left: 48%;
-  top: 10%;
-}
-.skill:nth-child(11) {
-  left: 60%;
-  top: 54%;
-}
-.skill:nth-child(12) {
-  left: 52%;
-  top: 73%;
-}
-.skill:nth-child(13) {
-  left: 35%;
-  top: 65%;
-}
-.skill:nth-child(14) {
-  left: 35%;
-  top: 20%;
-}
-.skill:nth-child(15) {
-  left: 57%;
-  top: 27%;
-}
-.skill:nth-child(16) {
-  left: 77%;
-  top: 15%;
-}
-.skill:nth-child(17) {
-  left: 82%;
-  top: 55%;
+@media screen and (min-width: 1100px) {
+  .skill {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;
+  }
+
+  .skill:nth-child(2) {
+    left: 13%;
+    top: 13%;
+  }
+  .skill:nth-child(3) {
+    left: 23%;
+    top: 38%;
+  }
+  .skill:nth-child(4) {
+    left: 30%;
+    top: 80%;
+  }
+  .skill:nth-child(5) {
+    left: 10%;
+    top: 73%;
+  }
+  .skill:nth-child(6) {
+    left: 68%;
+    top: 77%;
+  }
+  .skill:nth-child(7) {
+    left: 20%;
+    top: 60%;
+  }
+  .skill:nth-child(8) {
+    left: 5%;
+    top: 45%;
+  }
+  .skill:nth-child(9) {
+    left: 72%;
+    top: 36%;
+  }
+  .skill:nth-child(10) {
+    left: 48%;
+    top: 10%;
+  }
+  .skill:nth-child(11) {
+    left: 60%;
+    top: 54%;
+  }
+  .skill:nth-child(12) {
+    left: 52%;
+    top: 73%;
+  }
+  .skill:nth-child(13) {
+    left: 35%;
+    top: 65%;
+  }
+  .skill:nth-child(14) {
+    left: 35%;
+    top: 20%;
+  }
+  .skill:nth-child(15) {
+    left: 57%;
+    top: 27%;
+  }
+  .skill:nth-child(16) {
+    left: 77%;
+    top: 15%;
+  }
+  .skill:nth-child(17) {
+    left: 82%;
+    top: 55%;
+  }
 }

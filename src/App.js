@@ -4,8 +4,10 @@ import React, { useState, useEffect } from "react";
 import StudiesSection from "./components/StudiesSection/StudiesSection";
 import SkillsSection from "./components/SkillsSection/SkillsSection";
 import AboutMe from "./components/AboutMe/AboutMe";
+import Footer from "./components/Footer/Footer";
 
 function App() {
+  const [isPinned, setIsPinned] = useState(true);
   const [isDark, setIsDark] = useState(false);
   const [language, setLanguage] = useState("en");
 
@@ -31,15 +33,18 @@ function App() {
   return (
     <div className="App">
       <Header
+        isPinned={isPinned}
+        setIsPinned={setIsPinned}
         isDark={isDark}
         setIsDark={setIsDark}
         language={language}
         setLanguage={setLanguage}
       />
-      <GreetSection />
-      <StudiesSection />
-      <SkillsSection />
-      <AboutMe />
+      <GreetSection language={language} />
+      <StudiesSection language={language} />
+      <SkillsSection language={language} />
+      <AboutMe language={language} />
+      <Footer isDark={isDark} />
     </div>
   );
 }

@@ -19,13 +19,19 @@ window.addEventListener('scroll', function() {
   }
 });
 
-function GreetSection() {
+function GreetSection({language}) {
     return (
         <div className="greet-section">
+          {language === "en" ? 
             <div className='greet-text'>
                <h1>My name is <span>Ducza Szabolcs</span> and this is my portfolio page</h1>
                <p>Scroll down to learn more about me! &darr;</p>
+            </div> :
+            <div className='greet-text'>
+               <h1><span>Ducza Szabolcs</span> vagyok és ez az én portfólió oldalam</h1>
+               <p>Görgess lejjebb hogy többet megtudj rólam! &darr;</p>
             </div>
+          }
             <div className='greet-image-container'>
                 <div></div>
                 <img src={pictureOfMe} alt='' className='greet-image' draggable={false}/>

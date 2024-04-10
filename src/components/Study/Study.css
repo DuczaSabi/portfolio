@@ -43,7 +43,7 @@
 .study-info h2 {
   margin: 20px;
   font-size: 2rem;
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 .study-info h3 {
@@ -51,7 +51,17 @@
   margin-left: 40px;
   margin-right: 40px;
   font-size: 1.5rem;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.study-info h2 span {
+  text-decoration: underline;
+  transition: ease-in-out 0.15s;
+}
+
+.study-info h2 span:hover {
+  cursor: pointer;
+  opacity: 0.5;
 }
 
 .study-info p {
@@ -59,12 +69,83 @@
   font-size: 1.2rem;
 }
 
-/* @media screen {
+@media screen and (max-width: 1300px) {
+  .study {
+    padding: 1rem;
+    width: calc(100% - 2rem);
+  }
+
   .study:nth-child(2) {
     background-color: var(--primary-color);
   }
 
-  .study:nth-child(3) {
-    background-color: var(--secondary-color);
+  .study:nth-child(4) {
+    background-color: var(--primary-color);
   }
-} */
+}
+
+@media screen and (max-width: 750px) {
+  .study-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .study-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .study-image {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .study-info h2 {
+    font-size: 1.2rem;
+  }
+
+  .study-info h3 {
+    font-size: 1rem;
+  }
+
+  .study-image {
+    border-radius: 30px;
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .study-info h2 {
+    margin: 10px;
+    font-size: 1rem;
+  }
+
+  .study-info h3 {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 0.8rem;
+  }
+
+  .study-image {
+    border-radius: 20px;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .study-info h2 {
+    font-size: 0.7rem;
+  }
+
+  .study-info h3 {
+    font-size: 0.5rem;
+  }
+
+  .study-image {
+    border-radius: 15px;
+    width: 70px;
+    height: 70px;
+  }
+}
