@@ -27,13 +27,12 @@ skillList.forEach(skill => {
     imagePaths[skill.name] = require(`../../Images/Skills/${skill.name}.png`);
 });
 
-let startFadePosition = 0;
+let windowHeight = window.innerHeight;
+let startFadePosition = windowHeight * 1.6;
 
 window.addEventListener('scroll', function() {
   let scrollTop = window.scrollY;
   let skillsSection = document.querySelector('.skills-section');
-  let windowHeight = window.innerHeight;
-  startFadePosition = windowHeight * 0.9;
 
   if (scrollTop > startFadePosition) {
     skillsSection.style.display = "flex";
@@ -48,7 +47,7 @@ window.addEventListener('scroll', function() {
 });
 
 window.addEventListener('resize', function() {
-  let windowHeight = window.innerHeight;
+  windowHeight = window.innerHeight;
   startFadePosition = windowHeight * 1.6;
 });
 
