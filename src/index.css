@@ -15,6 +15,18 @@ body {
   margin: auto;
 }
 
+#tsparticles {
+  z-index: -9999;
+}
+
+.unfade-particle {
+  opacity: 0.5;
+}
+
+.fade-particle {
+  opacity: 0.3;
+}
+
 .hide {
   display: none;
 }

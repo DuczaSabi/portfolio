@@ -62,10 +62,11 @@
   font-size: 1.7rem;
   margin-left: 2rem;
   margin-right: 2rem;
+  text-decoration: line-through;
 }
 
 .header-points span:hover {
-  text-decoration: underline;
+  cursor: not-allowed;
 }
 
 /* Menu Toggles */
