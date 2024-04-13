@@ -5,25 +5,17 @@ import StudiesSection from "./components/StudiesSection/StudiesSection";
 import SkillsSection from "./components/SkillsSection/SkillsSection";
 import AboutMe from "./components/AboutMe/AboutMe";
 import Footer from "./components/Footer/Footer";
+import Loading from "./components/Loading/Loading";
 
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-// import { loadAll } from "@tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
-// import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "@tsparticles/slim";
 
 function App() {
   const [init, setInit] = useState(false);
 
-  // this should be run only once per application lifetime
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-      // starting from v2 you can add only the features you need reducing the bundle size
-      //await loadAll(engine);
-      //await loadFull(engine);
       await loadSlim(engine);
-      //await loadBasic(engine);
     }).then(() => {
       setInit(true);
     });
@@ -103,7 +95,7 @@ function App() {
                 value: "#0000FF",
                 animation: {
                   enable: true,
-                  speed: 400,
+                  speed: 200,
                   sync: true,
                 },
               },
@@ -592,27 +584,30 @@ function App() {
   }, [isDark]);
 
   return (
-    <div className="App">
-      <Particles
-        id="tsparticles"
-        className={isDark ? "unfade-particle" : "fade-particle"}
-        particlesLoaded={particlesLoaded}
-        options={options}
-      />
-      <Header
-        isPinned={isPinned}
-        setIsPinned={setIsPinned}
-        isDark={isDark}
-        setIsDark={setIsDark}
-        language={language}
-        setLanguage={setLanguage}
-      />
-      <GreetSection language={language} />
-      <StudiesSection language={language} />
-      <SkillsSection language={language} />
-      <AboutMe language={language} />
-      <Footer isDark={isDark} />
-    </div>
+    <>
+      <Loading className={init ? "loaded" : ""} />
+      <div className={init ? "App" : "App loaded"}>
+        <Particles
+          id="tsparticles"
+          className={isDark ? "unfade-particle" : "fade-particle"}
+          particlesLoaded={particlesLoaded}
+          options={options}
+        />
+        <Header
+          isPinned={isPinned}
+          setIsPinned={setIsPinned}
+          isDark={isDark}
+          setIsDark={setIsDark}
+          language={language}
+          setLanguage={setLanguage}
+        />
+        <GreetSection language={language} />
+        <StudiesSection language={language} />
+        <SkillsSection language={language} />
+        <AboutMe language={language} />
+        <Footer isDark={isDark} />
+      </div>
+    </>
   );
 }
 

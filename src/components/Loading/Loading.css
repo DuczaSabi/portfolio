@@ -1,0 +1,76 @@
+.loading-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  z-index: 9999;
+}
+
+.loaded {
+  display: none;
+}
+
+/* Loading Spinner */
+.loader {
+  position: absolute;
+  width: 300px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, #005fc6 94%, #0000) top/8px 8px
+      no-repeat,
+    conic-gradient(#0000 30%, #005fc6);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+  animation: spinner 1s infinite linear;
+}
+@keyframes spinner {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+/* Loading Text */
+.loading-container h1 {
+  width: fit-content;
+  font-weight: bold;
+  font-family: monospace;
+  color: #0060c6d0;
+  font-size: 40px;
+  clip-path: inset(0 3ch 0 0);
+  animation: text 1s steps(4) infinite;
+}
+.loading-container h1:before {
+  content: "Loading...";
+}
+@keyframes text {
+  to {
+    clip-path: inset(0 -1ch 0 0);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .loader {
+    width: 230px;
+  }
+
+  .loading-container h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .loader {
+    width: 160px;
+  }
+
+  .loading-container h1 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .loader {
+    display: none;
+  }
+}

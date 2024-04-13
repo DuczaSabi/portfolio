@@ -150,8 +150,8 @@
   }
 
   .greet-image-container img {
-    margin-left: -3px;
-    margin-top: -121px;
+    margin-left: -4px;
+    margin-top: -119px;
   }
 }
 
@@ -168,7 +168,9 @@
     text-align: center;
     font-size: 0.8rem;
   }
+}
 
+@media screen and (max-width: 300px) {
   .greet-image-container img,
   .greet-image-container div {
     width: 150px;
@@ -181,6 +183,6 @@
   }
 
   .greet-image-container img {
-    margin-top: -184px;
+    margin-top: -180px;
   }
 }

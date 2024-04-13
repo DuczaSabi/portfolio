@@ -17,7 +17,9 @@ function StudiesSection({language}) {
             </Study>
 
             <Study image="euroexam">
-                <h2>Euroexam</h2>
+            {language === "en" ?
+                <h2>Euroexam (Language Exam - English B2)</h2> :
+                <h2>Euroexam (Nyelvvizsga - Angol B2)</h2> }
                 <h3>2022</h3>
             </Study>
 
@@ -30,7 +32,9 @@ function StudiesSection({language}) {
             </Study>
 
             <Study image="mqs">
-                <h2>Molecular Quantum Solutions</h2>
+            {language === "en" ?
+                <h2>Molecular Quantum Solutions (Frontend Developer Intern)</h2> :
+                <h2>Molecular Quantum Solutions (Frontend Fejlesztő Gyakornok)</h2> }
                 <h3>2024-Present</h3>
             </Study>
         </div>
